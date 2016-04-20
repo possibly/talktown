@@ -1,6 +1,5 @@
 import random
 from name import Name
-from person import Person
 from corpora import Names
 from residence import House
 from artifact import WeddingRing
@@ -59,6 +58,7 @@ class Birth(Event):
 
     def __init__(self, mother, doctor):
         """Initialize a Birth object."""
+        from person import Person # Prevents circular importing; Person imports Mind imports Thought imports Event.
         super(Birth, self).__init__(game=mother.game)
         self.city = mother.city
         self.biological_mother = mother
