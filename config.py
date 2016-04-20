@@ -2599,21 +2599,21 @@ class Config(object):
                 ##  THOUGHTS   ##
                 #################
 
-        # JOR this block is currently ripped straight out of National Pastime, but it's
-        # a good starting point
+
         self.thought_prototype_specifications = sorted([
             # Each prototype is specified as a tuple (tag, likelihood, preconditions, effects)
             (
-                "retiring from baseball", 0.0,  # TODO TUNE THIS LIKELIHOOD
+                "myself being alive", 1.1,  # TODO TUNE THIS LIKELIHOOD
                 # Preconditions
-                (
-                    lambda person: person.player and person.player.career.team,
-                ),
+                [
+                    lambda person: person.alive == True,
+                ],
                 # Effects
-                (
-                    lambda person: person.player.career.consider_retirement,
-                )
+                [
+                    lambda person: None,
+                ]
             ),
+
             # Sort these by likelihood, so that the most frequent thought prototypes are considered
             # first; this just makes sense, but it will also serve computational efficiency, because
             # we'll be rolling far less random numbers when we iterate in this order

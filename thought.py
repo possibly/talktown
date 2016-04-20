@@ -7,7 +7,7 @@ class Thought(Event):
 
     def __init__(self, mind, tag, effects, evoked_by=None, provoked_by=None):
         """Initialize a Thought object."""
-        super(Thought, self).__init__(mind.person.cosmos)
+        super(Thought, self).__init__(mind.person.game)
         self.mind = mind
         self.tag = tag
         self.effects = effects  # A tuple of lambda expressions that expect the argument 'person'
@@ -25,7 +25,7 @@ class Thought(Event):
     def execute(self):
         """Register the effects of this thought on its thinker."""
         for effect in self.effects:
-            effect(person=self.mind.person)()
+            effect(person=self.mind.person)
 
 
 class Thoughts(object):
