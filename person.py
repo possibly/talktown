@@ -801,6 +801,9 @@ class Person(object):
         """Return this person's knowledge about another person's feature of the given type."""
         if other_person not in self.mind.mental_models:
             return None
+        # Status
+        elif feature_type == "status":
+            return self.mind.mental_models[other_person].status.status
         # Name
         elif feature_type == "first name":
             return self.mind.mental_models[other_person].name.first_name
