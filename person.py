@@ -22,6 +22,7 @@ class Person(object):
     def __init__(self, game, birth):
         """Initialize a Person object."""
         # Set location and gameplay instance
+        self.recent_thoughts = []
         self.game = game
         self.id = self.game.current_person_id
         self.game.current_person_id += 1
