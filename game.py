@@ -110,18 +110,18 @@ class Game(object):
         # Implant knowledge into everyone who is living to simulate knowledge
         # phenomena that would have occurred during the lo-fi simulation but
         # wasn't enacted due to reasons of computing efficiency
-        print "\nImplanting knowledge..."
-        for p in self.city.residents:
-            if p.age > 3:
-                p.implant_knowledge()
-        # Now simulate at full fidelity for the remaining week
-        while self.ordinal_date < self.ordinal_date_that_gameplay_begins:
-            self.enact_hi_fi_simulation()
-            print "{} days remain until gameplay begins".format(
-                self.ordinal_date_that_gameplay_begins-self.ordinal_date
-            )
-        # Simulate the night in question, on which the founder dies
-        self.enact_hi_fi_simulation()
+        # print "\nImplanting knowledge..."
+        # for p in self.city.residents:
+        #     if p.age > 3:
+        #         p.implant_knowledge()
+        # # Now simulate at full fidelity for the remaining week
+        # while self.ordinal_date < self.ordinal_date_that_gameplay_begins:
+        #     self.enact_hi_fi_simulation()
+        #     print "{} days remain until gameplay begins".format(
+        #         self.ordinal_date_that_gameplay_begins-self.ordinal_date
+        #     )
+        # # Simulate the night in question, on which the founder dies
+        # self.enact_hi_fi_simulation()
 
     def _generate_name_for_city(self):
         """Generate a name for the city."""
